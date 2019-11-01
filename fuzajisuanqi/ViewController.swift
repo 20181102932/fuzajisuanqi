@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     var a = ""
     var b = ""
-    var c = 0
+    var c:Double = 0
     var biaozhi:String = "1"
     @IBOutlet weak var result: UITextField!
 
@@ -116,6 +116,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func xiaoshudian(_ sender: UIButton) {
+         result.text = result.text! + "."
     }
     @IBAction func jia(_ sender: UIButton) {
         biaozhi = "1"
@@ -139,29 +140,30 @@ class ViewController: UIViewController {
     }
     @IBAction func dengyu(_ sender: UIButton) {
         b = result.text!
-        
-    }
-    @IBAction func qingchu(_ sender: UIButton) {
         if(biaozhi == "1")
         {
-         c = Int(a)! + Int(b)!
-        result.text = String(c)
+            c = Double(a)! + Double(b)!
+            result.text = String(c)
         }
         if(biaozhi == "2")
         {
-            c = Int(a)! - Int(b)!
+            c = Double(a)! - Double(b)!
             result.text = String(c)
         }
         if(biaozhi == "3")
         {
-            c = Int(a)! * Int(b)!
+            c = Double(a)! * Double(b)!
             result.text = String(c)
         }
         if(biaozhi == "4")
         {
-            c = Int(a)! / Int(b)!
+            c = Double(a)! / Double(b)!
             result.text = String(c)
         }
+        
+    }
+    @IBAction func qingchu(_ sender: UIButton) {
+        result.text = "0"
     }
     override func viewDidLoad() {
         super.viewDidLoad()
