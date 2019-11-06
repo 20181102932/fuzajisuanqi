@@ -20,7 +20,8 @@ class ViewController: UIViewController {
         {
             result.text = result.text! + "1"
         }
-        if(result.text == "0")
+        if(result.text == "0"
+)
         {
             result.text = "1"
         }
