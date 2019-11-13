@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var biaozhi:String = "1"
     var cnt:Int = 0
     var cntd:Int = 0
+    var cnld:Int=1
     @IBOutlet weak var result: UITextField!
 
    
@@ -27,9 +28,23 @@ class ViewController: UIViewController {
                   result.text=result.text!+sender.currentTitle!
                     cnt = 1
                 }
+            if(cnld>0 && sender.currentTitle=="0")
+            {
+                result.text=result.text!+sender.currentTitle!
+                cnld=cnld-1
+            }
         }
         if(cnt > 1)
         {
+            if(sender.currentTitle != "0")
+            {
+                cnld=0
+            }
+            if(cnld>0 && sender.currentTitle=="0")
+            {
+                 result.text=result.text!+sender.currentTitle!
+                cnld=cnld-1
+            }
             if(sender.currentTitle != ".")
             {
                 result.text=result.text!+sender.currentTitle!
@@ -55,6 +70,7 @@ class ViewController: UIViewController {
         result.text = ""
         cntd=0
         cnt=0
+        cnld = 1
     }
     @IBAction func jian(_ sender: UIButton) {
         biaozhi = "2"
@@ -62,6 +78,7 @@ class ViewController: UIViewController {
         result.text = ""
         cntd=0
         cnt=0
+        cnld = 1
     }
     @IBAction func cheng(_ sender: UIButton) {
         biaozhi = "3"
@@ -69,6 +86,7 @@ class ViewController: UIViewController {
         result.text = ""
         cntd=0
         cnt=0
+        cnld = 1
     }
     @IBAction func chu(_ sender: UIButton) {
         biaozhi = "4"
@@ -76,6 +94,7 @@ class ViewController: UIViewController {
         result.text = ""
         cntd=0
         cnt=0
+        cnld = 1
     }
     @IBAction func dengyu(_ sender: UIButton) {
         b = result.text!
@@ -101,11 +120,13 @@ class ViewController: UIViewController {
         }
         cntd=0
         cnt=0
+        cnld = 1
     }
     @IBAction func qingchu(_ sender: UIButton) {
         result.text = ""
         cntd=0
         cnt=0
+        cnld = 1
     }
     override func viewDidLoad() {
         super.viewDidLoad()
