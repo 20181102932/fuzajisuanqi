@@ -13,131 +13,69 @@ class ViewController: UIViewController {
     var b = ""
     var c:Double = 0
     var biaozhi:String = "1"
+    var cnt:Int = 0
+    var cntd:Int = 0
     @IBOutlet weak var result: UITextField!
 
-    @IBAction func yi(_ sender: UIButton) {
-        if(result.text != "0")
+   
+
+    @IBAction func input(_ sender: UIButton) {
+        if(cnt==0)
         {
-            result.text = result.text! + "1"
+            if(sender.currentTitle != ".")
+                {
+                  result.text=result.text!+sender.currentTitle!
+                    cnt = 1
+                }
         }
-        if(result.text == "0"
-)
+        if(cnt > 1)
         {
-            result.text = "1"
+            if(sender.currentTitle != ".")
+            {
+                result.text=result.text!+sender.currentTitle!
+                cnt=cnt+1
+            }
+            if(sender.currentTitle==".")
+            {
+                if(cntd==0)
+                {
+                    result.text=result.text!+sender.currentTitle!
+                    cntd=cntd+1
+                }
+            }
         }
-    }
-    @IBAction func er(_ sender: UIButton) {
-        if(result.text != "0")
+        if(result.text != "")
         {
-            result.text = result.text! + "2"
+         cnt=cnt+1
         }
-        if(result.text == "0")
-        {
-            result.text = "2"
-        }
-    }
-    @IBAction func san(_ sender: UIButton) {
-        if(result.text != "0")
-        {
-            result.text = result.text! + "3"
-        }
-        if(result.text == "0")
-        {
-            result.text = "3"
-        }
-    }
-    @IBAction func si(_ sender: UIButton) {
-        if(result.text != "0")
-        {
-            result.text = result.text! + "4"
-        }
-        if(result.text == "0")
-        {
-            result.text = "4"
-        }
-    }
-    @IBAction func wu(_ sender: UIButton) {
-        if(result.text != "0")
-        {
-            result.text = result.text! + "5"
-        }
-        if(result.text == "0")
-        {
-            result.text = "5"
-        }
-    }
-    @IBAction func liu(_ sender: UIButton) {
-        if(result.text != "0")
-        {
-            result.text = result.text! + "6"
-        }
-        if(result.text == "0")
-        {
-            result.text = "6"
-        }
-    }
-    @IBAction func qi(_ sender: UIButton) {
-        if(result.text != "0")
-        {
-            result.text = result.text! + "7"
-        }
-        if(result.text == "0")
-        {
-            result.text = "7"
-        }
-    }
-    @IBAction func ba(_ sender: UIButton) {
-        if(result.text != "0")
-        {
-            result.text = result.text! + "8"
-        }
-        if(result.text == "0")
-        {
-            result.text = "8"
-        }
-    }
-    @IBAction func jiu(_ sender: UIButton) {
-        if(result.text != "0")
-        {
-            result.text = result.text! + "9"
-        }
-        if(result.text == "0")
-        {
-            result.text = "9"
-        }
-    }
-    @IBAction func ling(_ sender: UIButton) {
-        if(result.text != "0")
-        {
-            result.text = result.text! + "0"
-        }
-        if(result.text == "0")
-        {
-            result.text = "0"
-        }
-    }
-    @IBAction func xiaoshudian(_ sender: UIButton) {
-         result.text = result.text! + "."
     }
     @IBAction func jia(_ sender: UIButton) {
         biaozhi = "1"
         a = result.text!
-        result.text = "0"
+        result.text = ""
+        cntd=0
+        cnt=0
     }
     @IBAction func jian(_ sender: UIButton) {
         biaozhi = "2"
          a = result.text!
-        result.text = "0"
+        result.text = ""
+        cntd=0
+        cnt=0
     }
     @IBAction func cheng(_ sender: UIButton) {
         biaozhi = "3"
          a = result.text!
-        result.text = "0"
+        result.text = ""
+        cntd=0
+        cnt=0
     }
     @IBAction func chu(_ sender: UIButton) {
         biaozhi = "4"
         a = result.text!
-        result.text = "0"
+        result.text = ""
+        cntd=0
+        cnt=0
     }
     @IBAction func dengyu(_ sender: UIButton) {
         b = result.text!
@@ -161,10 +99,13 @@ class ViewController: UIViewController {
             c = Double(a)! / Double(b)!
             result.text = String(c)
         }
-        
+        cntd=0
+        cnt=0
     }
     @IBAction func qingchu(_ sender: UIButton) {
-        result.text = "0"
+        result.text = ""
+        cntd=0
+        cnt=0
     }
     override func viewDidLoad() {
         super.viewDidLoad()
