@@ -24,11 +24,7 @@ class ViewController: UIViewController {
         {
             return
         }
-       // if(result.text == "0")
-      //  {
-      //      result.text = sender.currentTitle
-      //  }
-            if( result.text == "0" && sender.currentTitle != ".")
+            if( result.text == "0" && sender.currentTitle != "." || result.text=="+" || result.text=="-"||result.text=="*" || result.text=="÷")
                 {
                   result.text=sender.currentTitle!
                 }
@@ -39,22 +35,22 @@ class ViewController: UIViewController {
     @IBAction func jia(_ sender: UIButton) {
         biaozhi = "1"
         a = result.text!
-        result.text = "0"
+        result.text = "+"
     }
     @IBAction func jian(_ sender: UIButton) {
         biaozhi = "2"
          a = result.text!
-        result.text = "0"
+        result.text = "-"
     }
     @IBAction func cheng(_ sender: UIButton) {
         biaozhi = "3"
          a = result.text!
-        result.text = "0"
+        result.text = "*"
     }
     @IBAction func chu(_ sender: UIButton) {
         biaozhi = "4"
         a = result.text!
-        result.text = "0"
+        result.text = "÷"
     }
     @IBAction func dengyu(_ sender: UIButton) {
         b = result.text!
